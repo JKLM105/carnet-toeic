@@ -1,5 +1,7 @@
 # Carnet TOEIC
 
+🇫🇷 Français · [🇬🇧 English](README.en.md)
+
 Une extension Chrome pour **comprendre ses erreurs** pendant les exercices et les tests blancs TOEIC en ligne.
 
 Pendant que vous faites un exercice, l'extension enregistre discrètement :
