@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Carnet TOEIC — Transcription</title>
+<style>
+  body { font: 16px system-ui, sans-serif; max-width: 760px; margin: 30px auto; padding: 0 16px; color: #1d1d1f; }
+  h1 { font-size: 24px; margin-bottom: 4px; }
+  .carte { border: 1px solid #ddd; border-radius: 10px; padding: 14px 16px; margin: 14px 0; }
+  label { display: block; margin: 6px 0; }
+  button { padding: 10px 18px; border: 0; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; background: #1a73e8; color: #fff; }
+  button:disabled { opacity: .45; cursor: default; }
+  .barre { height: 14px; background: #eee; border-radius: 7px; overflow: hidden; margin: 10px 0; }
+  .barre div { height: 100%; width: 0; background: #1a73e8; transition: width .3s; }
+  #etat { font-weight: 600; }
+  #direct { font: 13px ui-monospace, monospace; background: #f6f6f8; border-radius: 8px; padding: 10px; height: 220px; overflow-y: auto; white-space: pre-wrap; }
+  .erreur { color: #b3261e; }
+  .ok { color: #137333; }
+  #depot { border: 2px dashed #bbb; border-radius: 10px; padding: 16px; text-align: center; color: #666; }
+  #depot.survol { border-color: #1a73e8; color: #1a73e8; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+  <h1>Carnet TOEIC — Transcription</h1>
+  <p id="source">Recherche du dernier enregistrement…</p>
+
+  <div class="carte">
+    <label><input type="radio" name="m" value="rapide" checked> Rapide (recommandé, ~150 Mo)</label>
+    <label><input type="radio" name="m" value="precis"> Précise, 3 à 4 fois plus lente (~500 Mo)</label>
+    <label><input type="checkbox" id="gpu"> Accélération graphique (expérimental — décocher si ça bloque)</label>
+    <button id="go" disabled>Lancer la transcription</button>
+  </div>
+
+  <div class="carte">
+    <div id="etat">En attente.</div>
+    <div class="barre"><div id="barre"></div></div>
+    <small id="eta"></small>
+    <div id="direct"></div>
+  </div>
+
+  <div id="depot">Ou déposez ici une archive <b>…-archive.zip</b> d'un ancien enregistrement.</div>
+  <p><small>Gardez cet onglet ouvert pendant la transcription. Les fichiers arrivent dans Téléchargements.</small></p>
+
+  <script src="lib/jszip.min.js"></script>
+  <script src="lib/jspdf.umd.min.js"></script>
+  <script src="idb.js"></script>
+  <script src="dossier.js"></script>
+  <script type="module" src="transcription.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<style>
+  body { font: 14px system-ui, sans-serif; width: 300px; margin: 0; padding: 14px; color: #1d1d1f; }
+  h1 { font-size: 16px; margin: 0 0 8px; }
+  p { margin: 6px 0; line-height: 1.35; }
+  .etat { padding: 8px 10px; border-radius: 8px; background: #f2f2f4; margin: 10px 0; }
+  .rec { background: #fdecea; color: #a1140a; font-weight: 600; }
+  .work { background: #e8f0fe; color: #174ea6; }
+  button { width: 100%; padding: 10px; border: 0; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; margin-top: 6px; }
+  #start { background: #1a73e8; color: #fff; }
+  #stop { background: #d93025; color: #fff; }
+  button:disabled { opacity: .45; cursor: default; }
+  label { display: block; margin: 4px 0; }
+  fieldset { border: 1px solid #ddd; border-radius: 8px; margin: 10px 0 0; padding: 6px 10px; }
+  small { color: #666; }
+</style>
+</head>
+<body>
+  <h1>Carnet TOEIC</h1>
+  <div id="etat" class="etat">Prêt.</div>
+  <button id="start">Démarrer sur cet onglet</button>
+  <button id="stop" disabled>Arrêter et analyser</button>
+  <button id="trans" style="background:#f2f2f4;color:#1d1d1f">Page de transcription</button>
+  <p><small>Lancez-le sur la page du test, avant de commencer. Le son reste audible. Rien ne s'affiche pendant le test. À l'arrêt, l'archive est enregistrée tout de suite, puis un onglet s'ouvre pour transcrire l'audio.</small></p>
+  <script src="popup.js"></script>
+</body>
+</html>
